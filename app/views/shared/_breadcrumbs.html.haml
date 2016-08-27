@@ -1,0 +1,6 @@
+%nav.breadcrumbs{ role: 'menubar', 'aria-label' => 'breadcrumbs' }
+  - breadcrumbs.each do |breadcrumb|
+    - if breadcrumb == breadcrumbs.last
+      %li.current{ role: 'menuitem' }= breadcrumb
+    - else
+      %li{ role: 'menuitem' }= breadcrumb

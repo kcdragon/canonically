@@ -1,0 +1,10 @@
+= render 'shared/breadcrumbs', breadcrumbs: ['Idioms']
+
+%h1 Idioms
+- if @idioms.present?
+  %ul
+    - @idioms.each do |idiom|
+      %li
+        = link_to idiom.name, idiom_path(idiom), title: idiom.description
+        \-
+        = idiom.description

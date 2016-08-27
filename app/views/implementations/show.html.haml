@@ -1,0 +1,12 @@
+= render 'shared/breadcrumbs', breadcrumbs: [ |
+  link_to('Idioms', idioms_path), |
+  link_to(@implementation.idiom.name, idiom_path(@implementation.idiom)), |
+  @implementation.code]
+
+%h1= @implementation.idiom.name
+%p
+  %i= @implementation.idiom.description
+
+%p= @implementation.language.name
+%code= @implementation.code
+%p= @implementation.explanation

@@ -1,0 +1,17 @@
+= render 'shared/breadcrumbs', breadcrumbs: [ |
+  link_to('Idioms', idioms_path), |
+  @idiom.name]
+
+%h1= @idiom.name
+%p
+  %i= @idiom.description
+
+- if @idiom.implementations.present?
+  %ul.results
+    - @idiom.implementations.each do |implementation|
+      %li.panel
+        %p
+          = implementation.language.name
+        %pre
+          %code= implementation.code
+        = link_to 'More', implementation_path(implementation), class: 'button'
